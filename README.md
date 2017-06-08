@@ -9,5 +9,5 @@ Despite an ever-increasing technology trend, medium-sized festivals lack resourc
 
 ## Employee View
 <p align="center">
-  <img src="https://github.com/FlorianObst/festUp/blob/master/FestUp.pdf"/>
+  <img src="https://github.com/FlorianObst/festUp/blob/master/FestUp.png"/>
 </p>
