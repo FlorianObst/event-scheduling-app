@@ -1,0 +1,72 @@
+<ion-view title="Register" hide-nav-bar="true">
+
+  <div class="about-header">
+    <ion-slide-box auto-play="true" show-pager="true" does-continue="true">
+      <ion-slide>
+        <div class="profile-media">
+          <div class="profile-details">
+            <img ng-src="img/festivals/logo.png">
+            <br><br><br><br><br>
+            <h1 class="color-white">
+                     Welcome to FestUp!
+                   </h1>
+          </div>
+          <img ng-src="img/festivals/landing_banner_1.jpg" class="about-image profile-background-image" style="vertical-align:middle;">
+        </div>
+      </ion-slide>
+
+      <ion-slide>
+        <div class="profile-media">
+          <div class="profile-details">
+            <img ng-src="img/festivals/logo.png">
+            <br><br><br><br><br>
+            <h1 class="color-white">
+                      Register to keep track of upcoming events!
+                    </h1>
+          </div>
+          <img ng-src="img/festivals/landing_banner_2.jpg" class="about-image profile-background-image" style="vertical-align:middle;">
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </div>
+
+
+  <section class="register register-text register-box h2-background">
+
+    <form class="card" name="myform" ng-submit="register()" novalidate>
+      <div>
+        <h1 class="animated slideInUp">Register</h1>
+        <p class="animated slideInUp">Let's get you started!</p>
+        <p ng-show="message">{{ message }}</p>
+      </div>
+
+      <fieldset class="card register-text animated slideInDown ">
+        <input class="register-input animated slideInLeft" type="text" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true">
+        <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched">
+          First name required</p>
+
+        <input class="register-input animated slideInLeft" type="text" name="lastname" placeholder="Last Name" ng-model="user.lastname" ng-required="true">
+        <p class="error validationerror" ng-show="myform.lastname.$invalid && myform.lastname.$touched">
+          Last name required</p>
+
+        <input class="register-input animated slideInLeft" type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+        <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched">
+          Must be a valid email</p>
+
+        <input class="register-input animated slideInLeft" type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+        <p class="error validationerror" ng-show="myform.password.$invalid && myform.email.$touched">
+          Password is required</p>
+
+      </fieldset>
+
+      <div class="register-button-box">
+
+        <button type="submit" class="button button-block button-assertive animated bounceIn" ng-disabled="myform.$invalid">Register</button>
+        <p class="animated slideInUp">or go to:<br></p>
+        <a href="#/app/log"><button class="button button-block button-assertive animated bounceIn" >Login</button></a>
+
+      </div>
+    </form>
+  </section>
+
+</ion-view>

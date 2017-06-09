@@ -1,0 +1,134 @@
+<ion-view view-title="Home">
+
+
+  <ion-header-bar class="fixed-header fixed-banner animated zoomInDown">
+    <img class="banner-image" src="img/festivals/festival_1_banner.jpg" alt="Stage 1">
+  </ion-header-bar>
+
+
+
+
+  <ion-content class="has-banner " scroll="true">
+    <br>
+
+    <!-- NOW AND NEXT -->
+
+    <table class="title-wrapper animated slideInLeft">
+      <tr>
+        <th>
+          <h1 class="homepage-title"><a href="#/app/nownext" menu-close>Now and Next</a></h1></th>
+        <th>
+          <p class="see-all-title"><a href="#/app/nownext" menu-close>See All</a></p>
+        </th>
+      </tr>
+    </table>
+
+
+    <ion-slide-box ng-if='artists.length > 0' class="slide-height animated slideInLeft" options="options" slider="data.slider">
+      <ion-slide ng-repeat='item in artists | limitTo: 3 ' ng-init="chooseStage">
+        <ion-item class="artist-box">
+          <div class="info-box-purple">
+            <div class="info-box-text">
+              <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+            </div>
+          </div>
+          <a href="#/app/artists/{{item.shortname}}">
+            <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+            <div class="item image item-image">
+              <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+            </div>
+          </a>
+          <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+          <div><button class="add-button button button-royal ion-minus animated rotateIn " ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+        </ion-item>
+      </ion-slide>
+    </ion-slide-box>
+
+    <!-- ARTISTS -->
+    <table class="title-wrapper animated slideInLeft">
+      <tr>
+        <th>
+          <h1 class="homepage-title"><a href="#/app/artists" menu-close>Artists</a></h1></th>
+        <th>
+          <p class="see-all-title"><a href="#/app/artists" menu-close>See All</a></p>
+        </th>
+      </tr>
+    </table>
+    <ion-slide-box ng-if='artists.length > 0' class="slide-height animated slideInLeft" options="options" slider="data.slider">
+      <ion-slide ng-repeat='item in artists | limitTo: artists.length ' ng-init="chooseStage">
+        <ion-item class="artist-box">
+          <div class="info-box-purple">
+            <div class="info-box-text">
+              <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+            </div>
+          </div>
+          <a href="#/app/artists/{{item.shortname}}">
+            <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+            <div class="item image item-image">
+              <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+            </div>
+          </a>
+          <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+          <div><button class="add-button button button-royal ion-minus animated rotateIn " ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+
+        </ion-item>
+      </ion-slide>
+    </ion-slide-box>
+
+
+    <!-- ACTIVITIES -->
+
+
+    <table class="title-wrapper animated slideInLeft">
+      <tr>
+        <th>
+          <h1 class="homepage-title"><a href="#/app/activities" menu-close>Activities</a></h1></th>
+        <th>
+          <p class="see-all-title"><a href="#/app/activities" menu-close>See All</a></p>
+        </th>
+      </tr>
+    </table>
+    <ion-slide-box ng-if='activities.length > 0' class="slide-height animated slideInLeft" options="options" slider="data.slider">
+      <ion-slide ng-repeat='item in activities | limitTo: activities.length ' ng-init="chooseStage">
+        <ion-item class="artist-box">
+          <div class="info-box-purple">
+            <div class="info-box-text">
+              <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+            </div>
+          </div>
+          <a href="#/app/activities/{{item.shortname}}">
+            <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+            <div class="item image item-image">
+              <img ng-src="img/activities/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+            </div>
+          </a>
+          <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeActivitySubscription(item)"></button></div>
+          <div><button class="add-button button button-royal ion-minus animated rotateIn " ng-show="item.subscribed" ng-click="changeActivitySubscription(item)"></button></div>
+        </ion-item>
+      </ion-slide>
+    </ion-slide-box>
+
+    <!-- STAGES -->
+    <table class="title-wrapper animated slideInLeft">
+      <tr>
+        <th>
+          <h1 class="homepage-title"><a href="#/app/stages" menu-close>Stages</a></h1></th>
+        <th>
+          <p class="see-all-title"><a href="#/app/stages" menu-close>See All</a></p>
+        </th>
+      </tr>
+    </table>
+    <ion-slide-box ng-if='stages.length > 0' class="slide-height animated slideInLeft" options="options" slider="data.slider">
+      <ion-slide ng-repeat='item in stages | limitTo: stages.length ' ng-init="chooseStage">
+        <ion-item class="artist-box">
+          <a menu-close href="#/app/stages">
+            <h3 class="homepage-title"><span>{{item.stagename}}</span></h3>
+            <div class="item image item-image">
+              <img ng-src="img/stages/{{item.stageshortname}}.jpg" alt="{{item.stagename}} Photo" />
+            </div>
+          </a>
+        </ion-item>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

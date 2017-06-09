@@ -1,0 +1,78 @@
+<ion-nav-bar align-title="left" class="bar-stable">
+
+</ion-nav-bar>
+
+
+
+<ion-view>
+  <ion-content scroll="true">
+    <ion-list class="list" ng-repeat="(key, item) in  artists | filter : { shortname: pickedartist }">
+      <ion-item class="artist-box animated slideInLeft">
+        <div class="info-box-purple">
+          <div class="info-box-text">
+            <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+          </div>
+        </div>
+
+        <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+        <div class="item image item-image">
+          <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+        </div>
+
+        <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+        <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+      </ion-item>
+      <ion-item class="item-text-wrap artist-bio">
+        <h1 class="slideInRight">Biography</h1>
+        <p class="slideInRight">{{item.bio}} </p><br>
+
+      </ion-item>
+      <!--
+button bar, will have data which stores links to each of the band's pages
+-->
+      <ion-item class="button-bar social-button-bar slideInRight">
+        <a ng-show="{{item.twitter}}" ng-href="{{item.twitter}}" onclick="window.open(this.href, '_system', 'location=yes'); return false;">
+          <button class="icon ion-social-twitter button button-positive button-clear"></button>
+        </a>
+        <a ng-show="{{item.facebook}}" ng-href="{{item.facebook}}" onclick="window.open(this.href, '_system', 'location=yes'); return false;">
+          <button class="icon ion-social-facebook button button-positive button-clear"></button>
+        </a>
+
+        <a ng-show="{{item.youtube}}" ng-href="{{item.youtube}}" onclick="window.open(this.href, '_system', 'location=yes'); return false;">
+          <button class="icon ion-social-youtube button button-assertive button-clear"></button>
+        </a>
+
+        <a ng-show="{{item.instagram}}" ng-href="{{item.instagram}}" onclick="window.open(this.href, '_system', 'location=yes'); return false;">
+          <button class="icon ion-social-instagram button button-dark button-clear"></button>
+        </a>
+
+      </ion-item>
+    </ion-list>
+
+    <h1 class="nownext-title slideInRight">See more artists</h1>
+
+
+    <ion-slide-box ng-if='artists.length > 0' class="slide-height" options="options" slider="data.slider">
+
+
+      <ion-slide ng-repeat='item in artists |filter:avoidArtist| limitTo: artists.length'>
+        <ion-item class="artist-box animated slideInLeft">
+
+          <div class="info-box-purple">
+            <div class="info-box-text">
+              <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+            </div>
+          </div>
+          <a href="#/app/artists/{{item.shortname}}">
+            <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+            <div class="item image item-image">
+              <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+            </div>
+          </a>
+          <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+          <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+        </ion-item>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

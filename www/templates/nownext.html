@@ -1,0 +1,45 @@
+<ion-view view-title="Now &amp; Next">
+  <ion-content scroll="true">
+    <ion-item ng-repeat='stage in stages' class="item-text-wrap artist-bio artist-box">
+      <h1 class="nownext-title animated slideInLeft">{{stage.stagename}}</h1>
+      <ion-slide-box class="slide-height" options="options" slider="data.slider">
+        <ion-slide>
+          <ion-item ng-repeat='item in getArtist(stage) | limitTo: 1 ' class="artist-box animated slideInLeft">
+            <div class="info-box-purple">
+              <div class="info-box-text">
+                <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+              </div>
+            </div>
+            <a href="#/app/artists/{{item.shortname}}">
+              <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+              <div class="item image item-image">
+                <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+              </div>
+            </a>
+            <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+            <div><button class="add-button button button-royal ion-minus animated rotateIn " ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+          </ion-item>
+        </ion-slide>
+
+
+        <ion-slide>
+          <ion-item ng-repeat='item in getArtist(stage) |filter:getArtist(stage)[1]| limitTo: 1' class="artist-box animated slideInLeft">
+            <div class="info-box-purple">
+              <div class="info-box-text">
+                <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+              </div>
+            </div>
+            <a href="#/app/artists/{{item.shortname}}">
+              <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+              <div class="item image item-image">
+                <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+              </div>
+            </a>
+            <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+            <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+          </ion-item>
+        </ion-slide>
+      </ion-slide-box>
+    </ion-item>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,67 @@
+<ion-view view-title="About">
+
+  <div>
+    <ion-content overflow-scroll='false' delegate-handle="userDetailContent" on-scroll="onUserDetailContentScroll()" header-shrink scroll-event-interval="2">
+      <div class="about-header">
+        <ion-slide-box auto-play="true" show-pager="true" does-continue="true">
+          <ion-slide>
+            <div class="profile-media">
+              <div class="profile-details">
+                <img ng-src="img/festivals/logo.png">
+                <br><br><br><br><br>
+                <h1 class="color-white" ng-show="currentUser">
+                            Hey {{currentUser.firstname}},
+                          </h1>
+              </div>
+              <img ng-src="img/festivals/landing_banner_1.jpg" class="about-image profile-background-image" style="vertical-align:middle;">
+            </div>
+          </ion-slide>
+
+          <ion-slide>
+            <div class="profile-media">
+              <div class="profile-details">
+                <img ng-src="img/festivals/logo.png">
+                <br><br><br><br><br>
+                <h1 class="color-white">
+                                 Thanks for using FestUp!
+                             </h1>
+              </div>
+              <img ng-src="img/festivals/landing_banner_2.jpg" class="about-image profile-background-image" style="vertical-align:middle;">
+            </div>
+          </ion-slide>
+
+    </ion-content>
+    </div>
+
+
+    <div class="register-text h2-background">
+      <div class="card about-card animated fadeIn">
+        <h2>FestUp was made with care and attention by:<br>
+            <h6><li>Li Xie</li></h6>
+            <h6><li>Florian Obst</li></h6>
+            <h6><li>Daniel Kremerov</li></h6>
+      </div>
+
+      <div class="card about-card animated fadeIn">
+        <h2>Whats new in version 0.0.1?</h2>
+        <br>
+        <h6><li>Added... well... everything!</li></h6>
+      </div>
+
+      <div class="card about-card animated fadeIn">
+        <h2>Coming soon...</h2>
+        <br>
+        <h6><li>Support for more festivals</li></h6>
+        <h6><li>More social features</li></h6>
+        <h6><li>Festival Map and Weather Support</li></h6>
+        <h6><li>Full Offline Support</li></h6>
+        <h6><li>... and more</li></h6>
+      </div>
+
+      <div class="card about-card animated fadeIn">
+        <h6>One day, in the correct hands and with the correct development, Festival Scheduler will become the popular tool for avid festival goers. Help us help you! Let us know about any improvements or bugs at festival.scheduling.app@gmail.com!</h6>
+      </div>
+
+    </div>
+
+</ion-view>

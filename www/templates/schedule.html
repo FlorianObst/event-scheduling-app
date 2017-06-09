@@ -1,0 +1,78 @@
+<ion-view view-title="My Schedule">
+
+  <ion-slide-box ng-if='days.length > 0' show-pager="false" class="fixed-header fixed-banner animated zoomInDown">
+    <ion-slide ng-repeat="item in days">
+      <button class="button" ng-click="chooseDay(item.day)">
+              <img ng-src="img/days/{{item.shortname}}.jpg" alt="{{item.day}} Photo"/>
+              <div class = "header_scroll_title">
+                  {{item.day}}
+              </div>
+          </button>
+    </ion-slide>
+  </ion-slide-box>
+
+  <ion-content class="has-banner" scroll="true">
+    <!-- Show artists -->
+    <ion-list class="list">
+      <ion-item ng-repeat="item in artists | filter: myDay |  filter: { subscribed: true }" class="artist-box">
+        <br></br>
+
+        <div class="info-box-purple">
+          <div class="info-box-text">
+            <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+          </div>
+        </div>
+
+        <a href="#/app/artists/{{item.shortname}}">
+          <h3 class="artist-title"><span>{{item.name}}</span></h3>
+          <div class="item image item-image">
+            <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+          </div>
+        </a>
+        <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+        <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+
+      </ion-item>
+    </ion-list>
+
+    <!-- Show activities -->
+    <ion-list class="list">
+      <ion-item ng-repeat="item in activities |  filter: { subscribed: true }" class="artist-box animated slideInLeft">
+        <br></br>
+
+        <div class="info-box-purple">
+          <div class="info-box-text">
+            <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+          </div>
+        </div>
+
+        <a href="#/app/activities/{{item.shortname}}">
+          <h3 class="artist-title"><span>{{item.name}}</span></h3>
+          <div class="item image item-image">
+            <img ng-src="img/activities/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+          </div>
+        </a>
+        <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+        <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+
+      </ion-item>
+    </ion-list>
+
+    <!-- this section creates the add more artists/activites buttons -->
+    <div>
+      <p class="card animated rollIn">
+        <div class="item animated slideInDown">
+          <a button class="button button-full button-icon icon ion-plus-circled" menu-close href="#/app/artists">
+            <h2>Add More Artists</h2></button>
+          </a>
+        </div>
+        <p class="card animated rollIn">
+          <div class="item animated slideInUp">
+            <a button class="button button-full button-icon icon ion-plus-circled" menu-close href="#/app/activities">
+              <h2>Add More Activities</h2></button>
+            </a>
+          </div>
+    </div>
+
+  </ion-content>
+</ion-view>

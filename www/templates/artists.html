@@ -1,0 +1,46 @@
+<ion-view view-title="Artists">
+
+
+  <!-- creates a search bar in place of the subheader -->
+  <ion-header-bar class="bar bar-subheader item-input-inset bar-stable">
+    <label class="item-input-wrapper">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" ng-model="query" placeholder="Search">
+        </label>
+  </ion-header-bar>
+
+  <ion-content class="has-subheader" scroll="true">
+
+
+    <ion-list class="list">
+
+      <!--
+- ng-repeat is the directive which allows it to go through the json data.
+- 'artists' is the part of the data.json file referred to in the ListController.
+- filter allows the query from the search bar above to searh and match data in 'artists'
+- the {{item.day}} etc instructs the 'day' identifier etc etc
+-->
+
+      <ion-item ng-repeat='(key, item) in artists | filter: query' class="artist-box animated slideInLeft">
+
+        <br></br>
+        <div class="info-box-purple">
+          <div class="info-box-text">
+            <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+          </div>
+        </div>
+        <a href="#/app/artists/{{item.shortname}}">
+          <h3 class="artist-title"><span>{{item.name}}</span></h3>
+          <div class="item image item-image">
+            <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+          </div>
+        </a>
+
+        <!-- if subscribed, minus will be shown, otherwise plus shown -->
+        <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+        <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

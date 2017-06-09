@@ -1,0 +1,54 @@
+<ion-view view-title="Stages">
+
+  <div class="fixed-header fixed-banner">
+    <ion-slide-box ng-if='stages.length > 0' show-pager="false">
+      <ion-slide ng-repeat="item in stages">
+        <div>
+          <button class="button" ng-click="chooseStage(item.stagename)">
+                        <img ng-src="img/stages/{{item.stageshortname}}.jpg" alt="{{item.stagename}} Photo"/>
+                            <div class = "header_scroll_title">
+                                {{item.stagename}}
+                            </div>
+                        </button>
+        </div>
+
+      </ion-slide>
+    </ion-slide-box>
+
+    <ion-content class="has-banner" scroll="true">
+
+      <!-- Code starts here -->
+      <ion-list class="animated slideInLeft">
+        <div ng-repeat="item in days">
+          <!-- Show the day and detect whether it is clicked -->
+          <ion-item class="item-stable animated slideInLeft" ng-click="toggleGroup(item); chooseDay(item.shortname)" ng-class="{active: isGroupShown(item)}">
+            <i class="icon" ng-class="isGroupShown(item) ? 'ion-minus' : 'ion-plus'">&nbsp;&nbsp;&nbsp;{{item.shortname}}</i>
+          </ion-item>
+          <!-- When clicked show content -->
+          <ion-item class="item-accordion" ng-show="isGroupShown(item)">
+            <!-- Show artists -->
+            <ion-list class="list">
+              <ion-item ng-repeat="item in artists | filter:myStage |filter:myDay" class="artist-box">
+                <div class="info-box-purple">
+                  <div class="info-box-text">
+                    <span>{{item.day}}<br>{{item.time}}<br>{{item.stage}}</span>
+                  </div>
+                </div>
+
+                <a href="#/app/artists/{{item.shortname}}">
+                  <h3 class="homepage-title"><span>{{item.name}}</span></h3>
+                  <div class="item image item-image">
+                    <img ng-src="img/artists/{{item.shortname}}.jpg" alt="{{item.name}} Photo" />
+                  </div>
+                </a>
+                <div><button class="add-button button button-royal ion-plus animated rotateIn" ng-hide="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+                <div><button class="add-button button button-royal ion-minus animated rotateIn" ng-show="item.subscribed" ng-click="changeSubscription(item)"></button></div>
+              </ion-item>
+            </ion-list>
+
+          </ion-item>
+        </div>
+      </ion-list>
+
+    </ion-content>
+</ion-view>

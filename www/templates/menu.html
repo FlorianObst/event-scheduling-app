@@ -1,0 +1,78 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content drag-content="false">
+    <ion-nav-bar align-title="left" class="bar-stable">
+      <ion-nav-back-button>Back
+      </ion-nav-back-button>
+
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+
+        </button>
+
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right">
+
+        <a class="button icon-left button-clear ion-home" menu-close href="#/app/homepage"></a>
+        <a class="button icon-left button-clear ion-calendar" menu-close href="#/app/schedule"></a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <!-- side bar menus. Contain links to different parts of the application. -->
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable item-icon-left">
+      <h1 class="title" ng-show="currentUser">Signed in as {{currentUser.firstname}}!</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/homepage">
+          <i class="icon ion-home"></i>Festival Homepage
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/nownext">
+          <i class="icon ion-clock"></i> Now and Next
+
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/artists">
+          <i class="icon ion-mic-b"></i> Artists
+        </ion-item>
+
+        </ion-item>
+        <ion-item menu-close class="item item-icon-left" href="#/app/activities">
+          <i class="icon ion-android-color-palette"></i> Activities
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/stages">
+          <i class="icon ion-ios-people"></i> Stages
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/schedule">
+          <i class="icon ion-calendar"></i> My Schedule
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/landingpage">
+          <i class="icon ion-ios-keypad"></i> Choose Festival
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/about">
+          <i class="icon ion-android-bulb"></i> About
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/log" ng-show="currentUser" ng-click="logout()">
+          <i class="icon ion-android-exit"></i> Logout
+        </ion-item>
+
+        <ion-item menu-close class="item item-icon-left" href="#/app/log" ng-hide="currentUser">
+          <i class="icon ion-calendar"></i> Login
+        </ion-item>
+
+
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

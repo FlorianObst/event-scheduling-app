@@ -1,0 +1,404 @@
+/* Empty. Add your own CSS if you like */
+
+a {
+  color: crimson;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 1.4em;
+  color: crimson;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: crimson;
+}
+
+h3 {
+  position: absolute;
+  top: 15px;
+  left: 5px;
+  width: 100%;
+  font-size: 2em;
+  color: red;
+}
+
+h3 span {
+  color: white;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+  letter-spacing: -1px;
+  padding: 5px;
+}
+
+h4 {
+  position: absolute;
+  top: 170px;
+  left: 5px;
+  width: 5%;
+  font-size: 1em;
+  color: white;
+  background-color: BlueViolet;
+}
+
+.register-box {
+    overflow-y: scroll;
+    height: 60%;
+}
+
+.register-text {
+  text-align: center;
+  line-height: 120%;
+  padding: 10px;
+}
+
+fieldset {
+  margin: 12px;
+}
+
+.register-button-box {
+  padding: 10px;
+}
+
+.register-input {
+  width: 100%;
+  text-align: center;
+}
+
+.about-card {
+  padding: 30px;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+ion-content {
+  background: white;
+  opacity: 50%;
+}
+
+.h2-background {
+  background-color: grey;
+}
+
+.artists-card {
+  background: grey;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* now and next title*/
+
+.homepage-title {
+  margin-left: 20px;
+  top: 10px;
+  float: left;
+}
+
+.nownext-title {
+  margin-left: 20px;
+  top: 10px;
+}
+
+.see-all-title {
+  text-align: right;
+  width: 100%;
+  float: right;
+  margin-right: 20px;
+}
+
+.title-wrapper {
+  width: 100%;
+}
+
+.image {
+  height: auto;
+  width: 100%;
+  z-index: -1;
+  position: relative;
+}
+
+.artist-box {
+  width: 101%;
+  padding: 0px !important;
+}
+
+.info-box-text {
+  text-align: center;
+  line-height: 120%;
+}
+
+.artist-title {
+  color: white;
+  left: 20px;
+  top: 50px;
+}
+
+.homepage-title {
+  color: white;
+  left: 20px;
+  top: 10px;
+}
+
+
+/*on the band info page*/
+
+.artist-bio p {
+  font-size: 1.0em;
+  line-height: 150%;
+  text-align: justify;
+}
+
+.info-box-purple {
+  background-color: rebeccapurple;
+  bottom: 10px;
+  left: 10px;
+  width: 20%;
+  color: whitesmoke;
+  margin-left: 0px;
+  position: absolute;
+  font-size: 1.0em;
+  position: absolute;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.add-button {
+  color: white;
+  border-radius: 50%;
+  width: 50px !important;
+  z-index: 12;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: 0.2s linear;
+  transition: 0.2s linear;
+  -webkit-transition-property: -webkit-transform, all;
+  transition-property: transform, all;
+}
+
+.behind {
+  z-index: -1;
+}
+
+.social-button-bar {
+  border: 1px;
+  text-align: center;
+  justify-content: center;
+}
+
+.slide-height {
+  height: 44%;
+}
+
+
+/* BEGIN: body_scroll */
+
+.header_scroll_title {
+  /*Note: .parent needs relative; .child needs absolute*/
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  font-size: 1.3em;
+  color: white;
+}
+
+.slider-pager-page {
+  color: crimson !important;
+}
+
+.slider {
+  padding-bottom: 25px;
+}
+
+.slider-pager {
+  top: initial;
+  bottom: 10px;
+}
+
+
+/* END: body_scroll_ */
+
+
+/*ensure min 100% of img's original size*/
+
+.scroll {
+  min-width: 100%;
+}
+
+
+/*Features of button (header_scroll items)*/
+
+.button-scroll {
+  /*Use to determine space between picture */
+  width: 100%;
+  height: auto;
+  background: none;
+  z-index: -1;
+}
+
+
+/*Img in button (header_scroll itmes)*/
+
+.button img {
+  /*Fill out complete box wiht img */
+  width: 110%;
+  height: 150%;
+  display: block;
+  position: relative;
+  left: -5%;
+}
+
+.gallery {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.head_spacing {
+  height: 10px;
+  background-color: white;
+}
+
+
+/* Accordion START */
+
+.list .item.item-accordion {
+  line-height: 30px;
+  padding: 0;
+  transition: 0.09s all linear;
+}
+
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add, .list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+
+/* Acoordion END */
+
+
+/*compensates for header*/
+
+.fixed-header {
+  margin-top: 43px;
+}
+
+
+/*for banner*/
+
+.fixed-banner {
+  height: 120px;
+  background-size: 100%;
+}
+
+
+/*compensates main body with banner width */
+
+.has-banner {
+  margin-top: 118px;
+}
+
+
+/*banner image placement */
+
+.banner-image {
+  height: auto;
+  width: 100%;
+  z-index: -1;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+/*landing page fonts*/
+
+.color-white {
+  color: #ffffff !important;
+}
+
+
+/* for landing page */
+
+.about-header {
+  background-color: #444;
+  height: 257px;
+  overflow: hidden;
+}
+
+.about-image {
+  width: 100%;
+  /*height: 220px;*/
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* for the landing page effects */
+
+.profile-media {
+  background: #000;
+  min-height: 237px;
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-media .profile-background-image {
+  opacity: 0.4;
+  position: absolute;
+  object-cover: fit;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  margin: auto;
+}
+
+.profile-media .profile-details {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  padding: 20px 5% 0 5%;
+}
+
+.profile-media .profile-details .profile-image {
+  width: 76px;
+  height: 76px;
+  object-cover: fit;
+  border: 4px solid rgba(255, 255, 255, 0.9);
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid #DA3637;
+  background: #DA3637;
+  color: white;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid #509D12;
+  background: #509D12;
+  color: white;
+}
+
+.ng-invalid .btn {
+  background: gray;
+}
+
+.error {
+  color: white;
+  padding-bottom: 10px;
+}
+
+.chat-item.ng-enter-stagger {
+  -webkit-animation-delay: 200ms;
+  animation-delay: 200ms;
+  /* override to make sure it's not inherited from other styles */
+  -webkit-animation-duration: 0;
+  animation-duration: 0;
+}
